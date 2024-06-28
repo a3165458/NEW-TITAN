@@ -180,15 +180,13 @@ function add_validator() {
     read -p "请输入您想设置的验证者的名字: " validator_name
     
 titand tx staking create-validator \
---amount="1art" \
+--amount="1000000uttnt" \
 --pubkey=$(titand tendermint show-validator) \
 --moniker="$validator_name" \
---commission-rate="0.10" \
---commission-max-rate="0.20" \
---commission-max-change-rate="0.01" \
---min-self-delegation="1" \
---gas="200000" \
---chain-id="titan_11822-1" \
+--commission-max-change-rate=0.01 \
+--commission-max-rate=1.0 \
+--commission-rate=0.07 \
+--fees 500uttnt \
 --from="$wallet_name" \
 
 }
@@ -198,7 +196,7 @@ titand tx staking create-validator \
 function delegate_self_validator() {
 read -p "请输入质押代币数量: " math
 read -p "请输入钱包名称: " wallet_name
-titand tx staking delegate $(titand keys show $wallet_name --bech val -a)  ${math}art --from $wallet_name --chain-id=titan_11822-1 --gas=300000
+titand tx staking delegate $(titand keys show $wallet_name --bech val -a)  ${math}art --from $wallet_name --fees 500uttnt
 
 }
 
