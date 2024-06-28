@@ -119,6 +119,15 @@ function install_node() {
     source $HOME/.bash_profile   
 
     pm2 start titand -- start && pm2 save && pm2 startup
+
+    # 下载快照
+    titand tendermint unsafe-reset-all --home $HOME/.artelad --keep-addr-book
+    curl https://snapshots.dadunode.com/titan/titan_latest_tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.titan/data
+    mv $HOME/.titan/priv_validator_state.json.backup $HOME/.titan/data/priv_validator_state.json
+
+    # 使用 PM2 启动节点进程
+
+    pm2 restart artelad
     
 
     echo '====================== 安装完成,请退出脚本后执行 source $HOME/.bash_profile 以加载环境变量 ==========================='
