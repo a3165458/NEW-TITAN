@@ -92,7 +92,7 @@ function install_node() {
 
     # 获取初始文件和地址簿
     wget https://raw.githubusercontent.com/nezha90/titan/main/genesis/genesis.json
-    mv genesis.json ~/.titan/config/genesis.jsonn
+    mv genesis.json ~/.titan/config/genesis.json
 
     # 配置节点
     SEEDS="bb075c8cc4b7032d506008b68d4192298a09aeea@47.76.107.159:26656"
