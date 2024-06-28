@@ -195,8 +195,9 @@ titand tx staking create-validator \
 --commission-max-change-rate=0.01 \
 --commission-max-rate=1.0 \
 --commission-rate=0.07 \
+--min-self-delegation=1 \
 --fees 500uttnt \
---from="$wallet_name" \
+--from="$wallet_name" 
 
 }
 
