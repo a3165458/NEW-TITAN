@@ -89,6 +89,7 @@ function install_node() {
     # 配置titand
     export MONIKER="My_Node"
     titand init $MONIKER --chain-id titan-test-1
+    titand config node tcp://localhost:53457
 
     # 获取初始文件和地址簿
     wget https://raw.githubusercontent.com/nezha90/titan/main/genesis/genesis.json
