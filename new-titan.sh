@@ -197,7 +197,8 @@ titand tx staking create-validator \
 --commission-rate=0.07 \
 --min-self-delegation=1 \
 --fees 500uttnt \
---from="$wallet_name" 
+--from="$wallet_name" \
+--chain-id=titan-test-1
 
 }
 
