@@ -205,9 +205,9 @@ titand tx staking create-validator \
 
 # 给自己地址验证者质押
 function delegate_self_validator() {
-read -p "请输入质押代币数量: " math
+read -p "请输入质押代币数量(单位为uttnt，1ttnt=1000000uttnt): " math
 read -p "请输入钱包名称: " wallet_name
-titand tx staking delegate $(titand keys show $wallet_name --bech val -a)  ${math}ttnt --from $wallet_name --fees 500uttnt
+titand tx staking delegate $(titand keys show $wallet_name --bech val -a)  ${math}uttnt --from $wallet_name --fees 500uttnt
 
 }
 
