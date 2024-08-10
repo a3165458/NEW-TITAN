@@ -92,7 +92,7 @@ function install_node() {
     titand config node tcp://localhost:53457
 
     # 获取初始文件和地址簿
-    wget https://raw.githubusercontent.com/nezha90/titan/main/genesis/genesis.json
+    wget https://raw.githubusercontent.com/Titannet-dao/titan-chain/main/genesis/genesis.json
     mv genesis.json ~/.titan/config/genesis.json
 
     # 配置节点
@@ -100,7 +100,7 @@ function install_node() {
     PEERS=""
     sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.titan/config/config.toml
 
-    wget https://raw.githubusercontent.com/nezha90/titan/main/addrbook/addrbook.json
+    wget https://raw.githubusercontent.com/Titannet-dao/titan-chain/main/addrbook/addrbook.json
     mv addrbook.json ~/.titan/config/addrbook.json
 
     # 配置裁剪
