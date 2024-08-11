@@ -81,8 +81,8 @@ function install_node() {
 
     # 安装所有二进制文件
     cd $HOME
-    git clone https://github.com/nezha90/titan.git
-    cd titan
+    git clone https://github.com/Titannet-dao/titan-chain.git
+    cd titan-chain
     go build ./cmd/titand
     cp titand /usr/local/bin
 
