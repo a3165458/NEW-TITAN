@@ -88,7 +88,7 @@ function install_node() {
 
     # 配置titand
     export MONIKER="My_Node"
-    titand init $MONIKER --chain-id titan-test-1
+    titand init $MONIKER --chain-id titan-test-4
     titand config node tcp://localhost:53457
 
     # 获取初始文件和地址簿
@@ -119,11 +119,6 @@ function install_node() {
     source $HOME/.bash_profile   
 
     pm2 start titand -- start && pm2 save && pm2 startup
-
-    # 下载快照
-    titand tendermint unsafe-reset-all --home $HOME/.titan --keep-addr-book
-    curl https://snapshots.dadunode.com/titan/titan_latest_tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.titan/data
-    mv $HOME/.titan/priv_validator_state.json.backup $HOME/.titan/data/priv_validator_state.json
 
     # 使用 PM2 启动节点进程
 
